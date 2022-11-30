@@ -1,13 +1,13 @@
 #!/bin/bash
 
-name="Michael Placzek"
+command=htop
 
-now=$(date)
+if command -v $command
+then
+    echo "$command is available, let's run it..."
+else
+    echo "$command is NOT available, installing it..."
+    sudo apt update && sudo apt install -y $command
+fi
 
-echo "Hello $name"
-
-echo "The system time and date is:"
-
-echo $now
-
-echo "Your username is: $USER"
+$command
