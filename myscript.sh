@@ -1,13 +1,16 @@
 #!/bin/bash
 
-command=htop
+directory=/etc
 
-if command -v $command
+if [ -d $directory ]
 then
-    echo "$command is available, let's run it..."
+    echo "The directory $directory exists."
+    exit 0
 else
-    echo "$command is NOT available, installing it..."
-    sudo apt update && sudo apt install -y $command
+    echo "The directory $directory doesn't exist."
+    exit 199
 fi
 
-$command
+echo "The exit code for this script run is: $?"
+echo "You didn't see that statement"
+echo "You won't see this one either"
