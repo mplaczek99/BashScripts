@@ -1,6 +1,13 @@
 #!/bin/bash
 
-echo "Hello World!"
+name="Michael Placzek"
 
-echo "My current working directory is:"
-pwd
+now=$(date)
+
+echo "Hello $name"
+
+echo "The system time and date is:"
+
+echo $now
+
+echo "Your username is: $USER"
