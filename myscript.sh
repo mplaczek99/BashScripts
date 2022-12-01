@@ -1,7 +1,5 @@
 #!/bin/bash
 
-for file in logfiles/*.log
-do
-    tar -czvf $file.tar.gz $file
-    rm $file
-done
+echo "Please enter your name:"
+read myname
+echo "Your name is: $myname"
