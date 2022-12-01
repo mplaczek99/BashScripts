@@ -1,16 +1,9 @@
 #!/bin/bash
 
-directory=/etc
+while [ -f ~/testfile ]
+do
+    echo "As of $(date), the test file exists."
+    sleep 5
+done
 
-if [ -d $directory ]
-then
-    echo "The directory $directory exists."
-    exit 0
-else
-    echo "The directory $directory doesn't exist."
-    exit 199
-fi
-
-echo "The exit code for this script run is: $?"
-echo "You didn't see that statement"
-echo "You won't see this one either"
+echo "As of $(date), the test file has gone missing."
