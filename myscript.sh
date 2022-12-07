@@ -1,5 +1,12 @@
 #!/bin/bash
 
-logfile=job_results.log
+lines=$(ls -lh $1 | wc -l)
 
-/usr/bin/echo "The script ran at the following time: $(/usr/bin/date)" > $logfile
+if [ $# -ne 1 ]
+then
+    echo "This script requires exactly one directory path passed to it."
+    echo "Please try again."
+    exit 1
+fi
+
+echo "You have $(($lines-1)) objects in the $1 directory."
