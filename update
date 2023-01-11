@@ -21,6 +21,10 @@ update_flatpak() {
     fi
 }
 
+# Always clear the log files
+sudo truncate -s 0 $logfile
+sudo truncate -s 0 $error_log
+
 if grep -q "Arch" $release_file
 then
     # The host is based on Arch, run the pacman update command
