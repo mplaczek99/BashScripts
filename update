@@ -22,8 +22,9 @@ update_flatpak() {
 }
 
 # Always clear the log files
-sudo truncate -s 0 $logfile
-sudo truncate -s 0 $error_log
+sudo truncate -s 0 $logfile 1>>$logfile 2>>$errorlog
+sudo truncate -s 0 $errorlog 1>>$logfile 2>>$errorlog
+check_exit_status
 
 if grep -q "Arch" $release_file
 then
